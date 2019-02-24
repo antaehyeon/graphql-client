@@ -1,5 +1,5 @@
 import React from "react";
 
-const Detail = () => "Details";
+const Detail = () => <div>Details</div>;
 
 export default Detail;

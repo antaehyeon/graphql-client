@@ -35,7 +35,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 `yarn add react-router-dom apollo-boost react-apollo graphql-tag graphql --save`
 
 - Apollo Boost 는 GraphQL을 위한 Client 를 가지기 위해 셋업을 자동화 (Create Simple Client)
-- 
+
+`yarn add react-helmet`
 
 
 
