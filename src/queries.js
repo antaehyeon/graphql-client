@@ -1,12 +1,15 @@
 import gql from "graphql-tag";
 
-// https://github.com/apollographql/graphql-tag
 export const HOME_PAGE = gql`
   {
-    movies(rating: 8.5, limit: 3) {
+    movies(limit: 50, rating: 7) {
       id
       title
+      genres
       rating
+      medium_cover_image
     }
   }
 `;
+
+export const MOVIE_DETAILS = gql``;
