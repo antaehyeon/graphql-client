@@ -1,10 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Query } from 'react-apollo';
-import { HOME_PAGE } from './queries';
-import Movie from './Movie';
-import { useQuery } from 'react-apollo-hooks';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import styled from "styled-components";
+import { HOME_PAGE } from "./queries";
+import Movie from "./Movie";
+import { useQuery } from "react-apollo-hooks";
+import { Helmet } from "react-helmet";
 
 const Container = styled.div`
   display: grid;
@@ -14,17 +13,19 @@ const Container = styled.div`
 `;
 
 const Home = () => {
-  const { data, error, loading } = useQuery(HOME_PAGE);
+  const { data: movieData, error, loading } = useQuery(HOME_PAGE);
 
   return (
     <Container>
       <Helmet>
         <title>Home | MovieQL</title>
       </Helmet>
-      {loading && 'Loading'}
-      {error && 'Something is wrong'}
+      {loading && "Loading"}
+      {error && "Something is wrong"}
       {!loading &&
-        data.movies.map(movie => (
+        movieData &&
+        movieData.movies &&
+        movieData.movies.map(movie => (
           <Movie
             id={movie.id}
             key={movie.id}
